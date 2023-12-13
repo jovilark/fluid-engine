@@ -9,7 +9,6 @@ namespace Graphics
                                      "{\n"
                                      "   gl_Position = vec4(aPos.x, aPos.y, aPos.z, 1.0);\n"
                                      "}\0";
-
     const char *fragmentShaderSource = "#version 330 core\n"
                                        "out vec4 FragColor;\n"
                                        "void main()\n"
@@ -28,6 +27,7 @@ namespace Graphics
     {
         initialize();
         _window = create(title, width, height);
+        loadFunctionPointers();
     }
 
     Window::~Window()
@@ -196,6 +196,8 @@ namespace Graphics
             glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
             // glBindVertexArray(0); // no need to unbind it every time
 
+            // glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
+            // -------------------------------------------------------------------------------
             glfwSwapBuffers(_window);
             glfwPollEvents();
         }
@@ -207,8 +209,13 @@ namespace Graphics
         glDeleteBuffers(1, &EBO);
         glDeleteProgram(shaderProgram);
 
+        // glfw: terminate, clearing all previously allocated GLFW resources.
+        // ------------------------------------------------------------------
         glfwTerminate();
     }
+
+    // process all input: query GLFW whether relevant keys are pressed/released this frame and react accordingly
+    // ---------------------------------------------------------------------------------------------------------
 
     void Window::processInput()
     {
@@ -218,6 +225,8 @@ namespace Graphics
         }
     }
 
+    // glfw: whenever the window size changed (by OS or user resize) this callback function executes
+    // ---------------------------------------------------------------------------------------------
     void Window::draw()
     {
     }
