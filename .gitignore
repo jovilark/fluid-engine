@@ -1,4 +1,5 @@
 .vscode/
-.DS_Store
 build/
 clang-format.txt
+src/.DS_Store
+.DS_Store
