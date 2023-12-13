@@ -1,2 +1,0 @@
-/usr/bin/ar qc libgraphics.a CMakeFiles/graphics.dir/glad.c.o CMakeFiles/graphics.dir/graphics.cxx.o CMakeFiles/graphics.dir/mysqrt.cxx.o CMakeFiles/graphics.dir/window.cxx.o
-/usr/bin/ranlib libgraphics.a
