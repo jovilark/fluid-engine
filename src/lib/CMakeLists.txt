@@ -1,0 +1,1 @@
+add_library(glfw3 libglfw3.a)
