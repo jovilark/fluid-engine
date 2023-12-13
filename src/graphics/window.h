@@ -14,10 +14,18 @@ namespace Graphics
         Window(const char *title, int width, int height);
         ~Window();
         void render();
-        void draw();
-        void processInput();
 
     private:
+        void draw();
+        void processInput();
+        void initialize();
+        GLFWwindow *create(const char *title, int width, int height);
+        void loadFunctionPointers();
+        unsigned int buildVertexShader();
+        unsigned int buildFragmentShader();
+        unsigned int buildShaderProgram(unsigned int vertexShader,
+                                        unsigned int fragmentShader);
+
         GLFWwindow *_window;
         int _width;
         int _height;
