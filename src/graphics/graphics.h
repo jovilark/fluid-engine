@@ -2,5 +2,4 @@
 
 namespace Graphics
 {
-    double sqrt(double x);
 }
